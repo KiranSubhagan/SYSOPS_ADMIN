@@ -12,7 +12,9 @@ $(date +%s)
 aws logs put-log-events --log-group-name  '/syops/exam/cloudwatch' --log-stream-name 1746727113 --log-events file://events
 
 **#BashScript to send sample logs**:
-**#!/bin/bash
+
+
+#!/bin/bash
 _# ----- Configuration -----
  LOG_GROUP_NAME="/syops/exam/cloudwatch"
  LOG_STREAM_NAME="1746770093"
