@@ -19,5 +19,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
     
-          run: bash cloudwatch/setup-eventbridge.sh
+      - name: Run the bash script
+        run: bash cloudwatch/setup-eventbridge.sh
 
