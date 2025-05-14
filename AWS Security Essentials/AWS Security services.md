@@ -25,3 +25,8 @@ Logging available in AWS:
 >>WAF logs
 >>These logs can be analyzed using the Athena after it is stored in AWS S3
 
+
+**Amazon GuardDuty**
+
+
+
