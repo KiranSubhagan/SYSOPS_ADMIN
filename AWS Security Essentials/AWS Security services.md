@@ -28,5 +28,11 @@ These logs can be analyzed using the Athena after it is stored in AWS S3
 
 **Amazon GuardDuty**
 
+**AWS Macie**
+Personally identifiable information[Discover Sensitive Data]
+
+**Trusted Advisor**
+
+
 
 
