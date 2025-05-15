@@ -34,5 +34,9 @@ Personally identifiable information[Discover Sensitive Data]
 **Trusted Advisor**
 
 
+**AWS KMS**
+
+Key management service
+
 
 
