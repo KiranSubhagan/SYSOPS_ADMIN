@@ -1,10 +1,14 @@
 **AWS Shield Standard**
+--------------------------------
 **AWS Shield Advanced**
+--------------------------------
 **AWS WAF**
+--------------------------------
 
 [We can do penetration testing on some of the AWS services, but certain type of attacks are prohibited. https://aws.amazon.com/security/penetration-testing/]
 
 **AWS Inspector**  [Automated Security Assessments]
+------------------------------------------------------
 For Ec2
 Container images pushed to AwS ECR
 Lamba Functions
@@ -14,6 +18,7 @@ Had Setup the Amazon inspector to scan for any vulnerabilities in an ec2 instanc
 
 
 **Logging for security and Complaince**
+------------------------------------------
 
 Logging available in AWS:
 Cloudwatch Logs
@@ -27,16 +32,39 @@ These logs can be analyzed using the Athena after it is stored in AWS S3
 
 
 **Amazon GuardDuty**
+-------------------
 
 **AWS Macie**
+-------------------
 Personally identifiable information[Discover Sensitive Data]
 
 **Trusted Advisor**
+-------------------
 
 
 **AWS KMS**
+--------------------
+Key management service. 
+          \|/
+Types of Encryption:
 
-Key management service
+1. Symmetric KMS key -> Single key encryption. Decryption and encryption using the same key.
+2.Assymmetric KMS Key -> Public and Private key encryption. Public key is used to encrypt the data and Private key is used to decrypt the data. This is useful when the transfering data outiside of AWS.
+
+Types Of Keys:
+AWS Owned keys ->> SSE-S3, SSE-EBS etc....
+AWS Managed Keys ->>aws/service-name
+Customer Managed Keys created in KMS
+Customer Managed Keys imported
+Rotation: --
+>AWS Managed - Every 1 year
+>Customer Managed -> On-Demand and need to setup
+
+
+
+KMS Key Policy
+
+Default and Custom
 
 
 
