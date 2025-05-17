@@ -60,11 +60,21 @@ Rotation: --
 >AWS Managed - Every 1 year
 >Customer Managed -> On-Demand and need to setup
 
+KMS Key policy
+
+Sample key policy:
 
 
-KMS Key Policy
 
-Default and Custom
+
+AWS Artifact
+
+A Way to download compliance documents and agreements.
+
+
+AWS Certificate Manager
+
+
 
 
 
