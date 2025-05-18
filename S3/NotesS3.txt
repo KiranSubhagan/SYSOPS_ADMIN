@@ -1,1 +1,14 @@
+Simple Storage Service
 
+Objects are stored in Buckets. Bucket name must be globally unique.
+Buckets are created at a region level.
+Objects have a key. Key is the full path to the object. [ Prefix+Objectname]
+Object values are the content of the body.
+
+MaxSize - > Maximum object size is 5 Terabytes
+If the file to be uploaded is more than 5 gigabytes, then we should use "Multi-Part-Upload".
+For example if we want to upload 5 TB file. We need to upload it as 1000 5GB files.
+
+VersionId - > Objects will have a version ID if versioning is enabled.
+
+Tags - >
