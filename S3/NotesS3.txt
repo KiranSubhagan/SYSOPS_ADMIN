@@ -1,5 +1,6 @@
+-----------------------
 Simple Storage Service
-
+-----------------------
 Objects are stored in Buckets. Bucket name must be globally unique.
 Buckets are created at a region level.
 Objects have a key. Key is the full path to the object. [ Prefix+Objectname]
@@ -12,9 +13,9 @@ For example if we want to upload 5 TB file. We need to upload it as 1000 5GB fil
 VersionId - > Objects will have a version ID if versioning is enabled.
 
 Tags - >
-
+------------------
 Features of S3:
-
+------------------
 >> Versioning
 >>cross-Region- Replication[Requires Policies which allows KMS Api calls] / Same-Region-Replication
 >>Encryption ---->> SSE-S3, SSE-KMS , SSE-C    |   In transit ---> HTTPS(Integrated with AWS ACM)
@@ -25,26 +26,35 @@ Features of S3:
 >>Lifecycle Rules
 >>Event Notifications
 
-
+------------------
 Lifecycle Rules:
+------------------
 
 Moving objects between different storage classes can be automated using lifecycle rules.
 Rules can be created for a certain prefix or certain object tags.
 >>Transition Actions
 >>Expiration Actions
-
+----------------------------------------------------------------------------------------------------------
 Note: Bucket policies will not stop the Lifecycle expiration  action from deleting an object in a Bucket.
-
+-----------------------------------------------------------------------------------------------------------
+---------------------------------------------------
 How to monitor the changes made by Lifecycle rules:
+---------------------------------------------------
 >> S3 Event Notifications.
 >> S3 Server Access logs.
 >> S3 Storage lens dashboard.
 
 When setting an Expiration action on a bucket with versioning enabled, We need to  add an additional lifecycle configuration to delete the previous versions of the objects, expired delete markers, and incomplete multipart uploads.
 
-
-Amazon S3 Analytics --->> Helps in decidign when to transition objects to the right class. Only for standard and standard IA.
+--------------------
+Amazon S3 Analytics
+--------------------
+ --->> Helps in decidign when to transition objects to the right class. Only for standard and standard IA.
 S3 Analytics produce a .csv file which consist of Object Age and the current storage class. After 24-48 hours the S3 analytics will start to make analysis on the which storage class is optimal.
+
+-----------------------
+S3 Event Notifications
+-----------------------
 
 
 
