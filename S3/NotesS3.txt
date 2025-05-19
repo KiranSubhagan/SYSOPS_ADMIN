@@ -88,4 +88,51 @@ Sample SQS policy:
     }
   ]
 }
-==========================================================================================================================================================================================
+=========================================================================================================================================================================================
+
+
+-------------------
+**S3 Perfomance:
+--------------------
+
+=========================
+Multipart Uploads:
+=========================
+
+Recommended for files above 100MB and is a must for files above 5GB.The file will be uploaded as chunks which increases the upload speed.
+
+===========================
+S3 Transfer Acceleration:
+===========================
+Increases the upload and download speed by routing the traffic to nearest edge locations.
+Example -----> India →  Mumbai Edge Location →  AWS private backbone network → S3 in North Virginia
+The data transfer charge will be higher than normal routing.
+
+============================
+S3 Byte-Range Fetches
+============================
+
+Used to speed up Downloads by splitting them into different chunks.
+
+Sample AWS Cli command to get the first 100 bytes:
+aws s3api get-object \
+  --bucket my-bucket \
+  --key largefile.log \
+  --range bytes=0-99 \
+  part1.txt
+
+Like this we can split a file into different chunks and download it.
+
+===========================
+S3 Batch Operations:
+===========================
+
+Perform bulk operations on existing objects in a bucket.
+
+A batch Job consist of :
+>The list of objects
+>The Action to perform
+>Optional Parameters
+
+
+
