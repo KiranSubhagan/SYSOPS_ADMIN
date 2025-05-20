@@ -1,1 +1,8 @@
 
+Roles:
+
+Human
+Machine
+
+
+Cross-Account-Access
