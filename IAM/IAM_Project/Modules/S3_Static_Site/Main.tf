@@ -29,7 +29,7 @@ bucket = aws_s3_bucket.static_site.id
 key = "index.html"
 source = "IAM/IAM_Project/Files/index.html"
 acl = "public-read"
-content-type = "text/html"
+content_type = "text/html"
 }
 
 
