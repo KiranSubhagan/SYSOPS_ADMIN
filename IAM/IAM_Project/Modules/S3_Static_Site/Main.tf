@@ -22,7 +22,7 @@ Version = "2012-10-17",
 ############################################################
 
 resource aws_s3_object "index" {
-bucket = aws_s3_bucket.stati_site.id
+bucket = aws_s3_bucket.static_site.id
 key = "index.html"
 source = "IAM/IAM_Project/Files/index.html"
 acl = "public-read"
