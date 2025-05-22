@@ -27,7 +27,7 @@ Version = "2012-10-17",
 resource aws_s3_object "index" {
 bucket = aws_s3_bucket.static_site.id
 key = "index.html"
-source = "IAM/IAM_Project/Files/index.html"
+source = "${path.module}IAM/IAM_Project/Files/index.html"
 acl = "public-read"
 content_type = "text/html"
 }
