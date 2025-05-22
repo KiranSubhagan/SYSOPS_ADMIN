@@ -10,6 +10,7 @@ bucket = var.bucket_name
 
 ######################################################
 resource aws_s3_bucket_policy "allow_public_read"{
+bucket = aws_s3_bucket.static_site.id
 policy = jsonencode({
 Version = "2012-10-17",
     Statement = [{
