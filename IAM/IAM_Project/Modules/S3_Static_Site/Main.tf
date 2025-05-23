@@ -14,13 +14,22 @@ bucket = aws_s3_bucket.static_site.id
 policy = jsonencode({
 Version = "2012-10-17",
     Statement = [{
+      Sid = "AllowPublic"
       Effect    = "Allow",
       Principal = "*",
-      Action    = "s3:GetObject",
+      Action    = ["s3:GetObject"]
       Resource  = "${aws_s3_bucket.static_site.arn}/*"
-    }]
-  })
+    },
+{
+Sid = "AllowTerraform"
+Effect = "Allow",
+Principal = "arn:aws:iam::941377118076:user/Github-Terraform-user",
+Action = "s3:*",
+Resource = ["${aws_s3_bucket.static_site.arn}/*", "${aws_s3_bucket.static_site.arn}"]
 }
+
+]
+  })
 
 ############################################################
 
