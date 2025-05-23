@@ -16,10 +16,19 @@ resource "aws_s3_bucket_public_access_block" "static_site" {
   restrict_public_buckets = false
 }
 
+resource "null_resource" "wait_30_seconds" {
+  provisioner "local-exec" {
+    command = "sleep 30"
+  }
+
+  depends_on = [aws_s3_bucket_public_access_block.static_site]
+}
+
 
 
 ######################################################
 resource "aws_s3_bucket_policy" "allow_public_read" {
+depends_on = [null_resource.wait_30_seconds]
   bucket = aws_s3_bucket.static_site.id
 
   policy = jsonencode({
@@ -54,7 +63,7 @@ resource aws_s3_object "index" {
 bucket = aws_s3_bucket.static_site.id
 key = "index.html"
 source = "./Files/index.html"
-acl = "public-read"
+
 content_type = "text/html"
 }
 
