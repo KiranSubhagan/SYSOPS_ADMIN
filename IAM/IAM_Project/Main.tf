@@ -6,7 +6,7 @@ provider "aws" {
 
 module "S3_Static_Site" {
   source = "./Modules/S3_Static_Site"
-bucket_name = "mystatiakshayalfdgfhbsivshnfakshmicbucket234567123452678"
+
 
 }
   
