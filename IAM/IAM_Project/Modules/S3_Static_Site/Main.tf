@@ -31,6 +31,8 @@ Resource = ["${aws_s3_bucket.static_site.arn}/*", "${aws_s3_bucket.static_site.a
 ]
   })
 
+}
+
 ############################################################
 
 resource aws_s3_object "index" {
