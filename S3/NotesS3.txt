@@ -173,6 +173,21 @@ After all parts are uploaded, Combine it using complete-multipart-upload:
 
 >>aws s3api complete-multipart-upload --bucket &Bucket_name --key 100MB.txt --upload-id ************  --multipart-upload "the json file with Etags of each parts"
 
+#############################
+Amazon Athena :
+#############################
+
+Athena is a serverless interactive query service that lets us query and retrieve data in S3.
+Athena can be used to query on other storage services as well using whats called as Data Source Connectors. ---> FEDERATED QUERIES
+
+Both relational and non relational data. ---> On AWS as well as On-Premises.
+
+
+DataSource -->Catalog ----> Group of Databases
+Database --> Schema ------> Group of tables
+Tables ----> Group of Rows and Columns
+
+
 
 
 
