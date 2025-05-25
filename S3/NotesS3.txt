@@ -135,4 +135,53 @@ A batch Job consist of :
 >Optional Parameters
 
 
+###############################################
+S3 Glacier:
+
+Storage class designed specifically for archival and long term data backups.
+Cannot move objects to a Vault manually. Need to be done via glacier specific API's. Via CLI or SDK.
+
+########################################################
+
+
+S3 Multipart uploads:
+
+using CLI:>>
+
+First create a file with 100MB inside the current path.
+#########################################################
+>>dd if=/dev/zero of=100MB.txt bs=1MB count=100
+
+Then split the file into 3 parts:>>
+####################################
+
+>>split -b 35m 100MB.txt 100MB_PART_
+
+
+Then initiate the multipart upload and copy the upload ID :>>
+############################################################
+>>aws s3api create-multipart-uploads --bucket $Bucket_name --key 100MB.txt 
+
+
+Then upload each part one by one:>>
+#####################################
+>>aws s3api upload-parts --bucket $Bucket_name --key 100MB.txt --body $File_name --part number --upload-id *********
+
+
+After all parts are uploaded, Combine it using complete-multipart-upload:
+##########################################################################
+
+>>aws s3api complete-multipart-upload --bucket &Bucket_name --key 100MB.txt --upload-id ************  --multipart-upload "the json file with Etags of each parts"
+
+
+
+
+
+
+
+
+
+
+
+
 
