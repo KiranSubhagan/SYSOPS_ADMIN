@@ -277,6 +277,57 @@ Retention Mode :----|
 S3 Access Points
 #############################
 
+Bucket Policy:
+_______________
+
+######################################################################################################################
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "DenyDirectAccess",
+            "Effect": "Deny",
+            "Principal": "*",
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::mfa-delte-demo-akshaya",
+                "arn:aws:s3:::mfa-delte-demo-akshaya/*"
+            ],
+            "Condition": {
+                "StringNotEquals": {
+                    "s3:DataAccessPointArn": "arn:aws:s3:us-east-1:941377118076:accesspoint/demo-access-point"
+                },
+                "ArnNotEquals": {
+                    "aws:PrincipalArn": "arn:aws:iam::941377118076:root"
+                }
+            }
+        }
+    ]
+}
+################################################################################################################
+Access Point Policy :
+_______________________
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": [
+                    "arn:aws:iam::941377118076:root",
+                    "arn:aws:iam::941377118076:user/KIRAN"
+                ]
+            },
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject"
+            ],
+            "Resource": "arn:aws:s3:us-east-1:941377118076:accesspoint/demo-access-point/object/*"
+        }
+    ]
+}
+########################################################################################################################################
+
 
 
 
