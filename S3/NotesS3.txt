@@ -188,6 +188,53 @@ Database --> Schema ------> Group of tables
 Tables ----> Group of Rows and Columns
 
 
+#######################################
+S3 Encryption
+#######################################
+
+Server Side Encryption -S3 Managed
+-----------------------------------
+
+Encryption Type --> AES-256
+Header --> x-amz-server-side-encrytpion : AES256
+
+Server side Encryption - KMS
+-----------------------------
+
+
+Uses KMS keys which we created to encrypt data in S3.
+
+Header --> x-amz-server-side-encryption : AWS:KMS
+
+Server Side encryption Customer managed key -(Can only be done from CLI or SDK)
+--------------------------------------------
+
+S3 doesn't store the key used to encrypt the data.
+Instead the key is sent along with the data and s3 uses the key to encrypt the data.
+HTTPS must be used in this case.
+
+Client side encryption
+------------------------
+
+The customer uses their own encryption algorithm to encrypt the data and sends it to S3 to store it.
+The Data in transit will be encrypted in this case.
+
+HIPAA
+
+
+S3 Encryption in Transit
+------------------------
+
+2 EndPoints : --> HTTP and HTTPS Endpoint
+
+
+How to force an encryption in transit? --> Apply a Bucket policy which restricts any getobject action when the request is via HTTP.
+
+######################################
+CORS --> Cross Orgin Resources Sharing
+######################################
+
+Orgin = Scheme+domain+port
 
 
 
