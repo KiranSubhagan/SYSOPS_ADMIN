@@ -236,6 +236,53 @@ CORS --> Cross Orgin Resources Sharing
 
 Orgin = Scheme+domain+port
 
+####################
+S3 MFA Delete
+####################
+
+
+#################
+S3 Access Logs
+##################
+
+
+##################
+S3 PReSigned URL
+##################
+
+#####################
+S3 Glacier Vault Lock
+#####################
+WORM
+
+
+Vault lock policy once created . It cannot be deleted.
+
+
+###########################
+S3 Object Lock
+###########################
+WORM
+Block an object version deletion for a specified amount of time.
+
+Retention Mode :----|
+                     
+
+1. Compliance mode --> Object Versions cannot be overwritten or deleted by anu user including the root user. Retention modes and period cannot be changed.
+2. Governance : ----->Admin or root user has some rights.
+3. Legal Hold: ---> Infnite and cannnot be disabled or deleted.
+
+
+#############################
+S3 Access Points
+#############################
+
+
+
+
+
+
+
 
 
 
