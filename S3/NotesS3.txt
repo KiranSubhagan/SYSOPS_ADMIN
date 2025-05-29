@@ -329,6 +329,22 @@ _______________________
 ########################################################################################################################################
 
 
+#############################
+S3 Multi-Region Access- point
+##############################
+
+Provides a global endpoint that spans s3 buckets in multiple region.
+
+Routes requests to the nearest s3 bucket
+
+Bidirectional s3 bucket replication rules are created to keep data in sync across regions
+
+Failover controls.
+
+
+##############################
+S3 VPC Endpoint
+##############################
 
 
 
